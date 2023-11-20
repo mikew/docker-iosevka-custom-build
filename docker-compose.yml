@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  iosevka-custom-build:
+    build: .
+    volumes:
+      - ./.build:/app/.build
+      - ./dist:/app/dist
+      - ./font-src:/app/font-src
+      - ./private-build-plans.toml:/app/private-build-plans.toml

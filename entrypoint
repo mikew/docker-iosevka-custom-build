@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+mkdir -p ./font-src
+cp -a ./font-src-pristine/* ./font-src
+
+if [ -z "$1" ]; then
+  npm run build ttf::iosevka-custom
+else
+  "$@"
+fi

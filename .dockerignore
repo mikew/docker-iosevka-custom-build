@@ -1,0 +1,6 @@
+./.build
+./dist
+./font-src
+./script
+./docker-compose.yml
+./private-build-plans.toml
