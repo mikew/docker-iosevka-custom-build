@@ -6,7 +6,7 @@ PROJECT_NAME=$(basename "$PWD")
 docker build \
   --pull \
   --build-arg "IOSEVKA_VERSION=${IOSEVKA_VERSION}" \
-  --tag "$PROJECT_NAME:$IOSEVKA_VERSION" \
+  --tag "mikew/$PROJECT_NAME:$IOSEVKA_VERSION" \
   .
 
-docker tag "$PROJECT_NAME:$IOSEVKA_VERSION" "$PROJECT_NAME:latest"
+docker tag "mikew/$PROJECT_NAME:$IOSEVKA_VERSION" "$PROJECT_NAME:latest"
