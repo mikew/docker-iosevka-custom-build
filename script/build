@@ -6,7 +6,12 @@ PROJECT_NAME=$(basename "$PWD")
 docker build \
   --pull \
   --build-arg "IOSEVKA_VERSION=${IOSEVKA_VERSION}" \
-  --tag "mikew/$PROJECT_NAME:$IOSEVKA_VERSION" \
+  --tag "mikewhy/$PROJECT_NAME:$IOSEVKA_VERSION" \
   .
 
-docker tag "mikew/$PROJECT_NAME:$IOSEVKA_VERSION" "$PROJECT_NAME:latest"
+docker tag "mikewhy/$PROJECT_NAME:$IOSEVKA_VERSION" "$PROJECT_NAME:latest"
+
+if [ "$GITHUB_REF" = "refs/heads/main" ]; then
+  docker push "mikewhy/$PROJECT_NAME:$IOSEVKA_VERSION"
+  docker push "mikewhy/$PROJECT_NAME:latest"
+fi
