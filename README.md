@@ -14,7 +14,7 @@ docker run --rm -t \
   --volume "$PWD/font-src:/app/font-src" \
   --volume "$PWD/dist:/app/dist" \
   --volume "$PWD/private-build-plans.toml:/app/private-build-plans.toml" \
-  docker-iosevka-custom-build:latest
+  mikewhy/docker-iosevka-custom-build:latest
 ```
 
 But you can supply any command
@@ -27,6 +27,6 @@ docker run --rm -t \
   --volume "$PWD/font-src:/app/font-src" \
   --volume "$PWD/dist:/app/dist" \
   --volume "$PWD/private-build-plans.toml:/app/private-build-plans.toml" \
-  docker-iosevka-custom-build:latest \
+  mikewhy/docker-iosevka-custom-build:latest \
   npm run build ttf::iosevka-custom ttf::iosevka-custom-slab
 ```
