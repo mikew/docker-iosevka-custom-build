@@ -9,7 +9,7 @@ docker build \
   --tag "mikewhy/$PROJECT_NAME:$IOSEVKA_VERSION" \
   .
 
-docker tag "mikewhy/$PROJECT_NAME:$IOSEVKA_VERSION" "$PROJECT_NAME:latest"
+docker tag "mikewhy/$PROJECT_NAME:$IOSEVKA_VERSION" "mikewhy/$PROJECT_NAME:latest"
 
 if [ "$GITHUB_REF" = "refs/heads/main" ]; then
   docker push "mikewhy/$PROJECT_NAME:$IOSEVKA_VERSION"
