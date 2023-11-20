@@ -7,7 +7,9 @@ Easily build a custom version of Iosevka.
 This will run `npm run build ttf::iosevka-custom`
 
 ```sh
-docker run --rm \
+mkdir -p ./.build ./font-src ./dist
+docker run --rm -t \
+  --user "$UID" \
   --volume "$PWD/.build:/app/.build" \
   --volume "$PWD/font-src:/app/font-src" \
   --volume "$PWD/dist:/app/dist" \
@@ -18,7 +20,9 @@ docker run --rm \
 But you can supply any command
 
 ```sh
-docker run --rm -it \
+mkdir -p ./.build ./font-src ./dist
+docker run --rm -t \
+  --user "$UID" \
   --volume "$PWD/.build:/app/.build" \
   --volume "$PWD/font-src:/app/font-src" \
   --volume "$PWD/dist:/app/dist" \
