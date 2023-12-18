@@ -1,6 +1,7 @@
 ./.build
 ./dist
-./font-src
+./font-glyphs
+./font-otl
 ./script
 ./docker-compose.yml
 ./private-build-plans.toml

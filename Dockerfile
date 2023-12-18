@@ -13,7 +13,8 @@ USER node
 RUN curl -L "https://github.com/be5invis/Iosevka/archive/refs/tags/${IOSEVKA_VERSION}.tar.gz" \
     | tar --strip-components=1 -xvz -C ./ \
   && npm install \
-  && mv font-src font-src-pristine
+  && mv packages/font-glyphs font-glyphs-pristine \
+  && mv packages/font-otl font-otl-pristine
 
 COPY entrypoint /entrypoint
 

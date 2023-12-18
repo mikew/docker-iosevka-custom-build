@@ -1,4 +1,5 @@
 /.build
 /dist
-/font-src
+/font-glyphs
+/font-otl
 /private-build-plans.toml

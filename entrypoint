@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-mkdir -p ./font-src
-cp -a ./font-src-pristine/* ./font-src
+mkdir -p ./packages/font-glyphs
+mkdir -p ./packages/font-otl
+cp -a ./font-glyphs-pristine/* ./packages/font-glyphs
+cp -a ./font-otl-pristine/* ./packages/font-otl
 
 if [ -z "$1" ]; then
-  npm run build ttf::iosevka-custom
+  npm run build ttf::IosevkaCustom
 else
   "$@"
 fi
