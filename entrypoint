@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
-mkdir -p ./packages/font-glyphs
-mkdir -p ./packages/font-otl
-cp -a ./font-glyphs-pristine/* ./packages/font-glyphs
-cp -a ./font-otl-pristine/* ./packages/font-otl
+PUID=${PUID:-1000}
+usermod -o -u "$PUID" node
+
+chown -R node:node /home/node /app
+
+runuser -u node -- mkdir -p ./packages/font-glyphs
+runuser -u node -- mkdir -p ./packages/font-otl
+runuser -u node -- cp -a ./font-glyphs-pristine/* ./packages/font-glyphs
+runuser -u node -- cp -a ./font-otl-pristine/* ./packages/font-otl
 
 if [ -z "$1" ]; then
-  npm run build ttf::IosevkaCustom
+  runuser -u node -- npm run build ttf::IosevkaCustom
 else
-  "$@"
+  runuser -u node -- "$@"
 fi

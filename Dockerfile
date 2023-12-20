@@ -16,6 +16,8 @@ RUN curl -L "https://github.com/be5invis/Iosevka/archive/refs/tags/${IOSEVKA_VER
   && mv packages/font-glyphs font-glyphs-pristine \
   && mv packages/font-otl font-otl-pristine
 
+USER root
+
 COPY entrypoint /entrypoint
 
 ENTRYPOINT ["/entrypoint"]

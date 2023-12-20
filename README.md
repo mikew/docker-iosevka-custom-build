@@ -9,7 +9,7 @@ This will run `npm run build ttf::IosevkaCustom`
 ```sh
 mkdir -p ./.build ./font-glyphs ./font-otl ./dist
 docker run --rm -t \
-  --user "$UID" \
+  --env "PUID=$UID" \
   --volume "$PWD/.build:/app/.build" \
   --volume "$PWD/font-glyphs:/app/packages/font-glyphs" \
   --volume "$PWD/font-otl:/app/packages/font-otl" \
@@ -23,7 +23,7 @@ But you can supply any command
 ```sh
 mkdir -p ./.build ./font-glyphs ./font-otl ./dist
 docker run --rm -t \
-  --user "$UID" \
+  --env "PUID=$UID" \
   --volume "$PWD/.build:/app/.build" \
   --volume "$PWD/font-glyphs:/app/packages/font-glyphs" \
   --volume "$PWD/font-otl:/app/packages/font-otl" \
